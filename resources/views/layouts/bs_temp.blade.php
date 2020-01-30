@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="{{ secure_asset('/css/index.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('/css/bs_index.css') }}">
         <title>@yield('title')</title>
     </head>
     <body>

@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Login;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Session;
 use Log;
 use Illuminate\Support\Facades\Cache;
 use App\Member;
 use Illuminate\Support\Str;
+use App\Consts\CommonConst;
 
 class LoginController extends Controller
 {
@@ -29,13 +29,13 @@ class LoginController extends Controller
         // 存在チェック
         if(!$members) {
             Log::info('会員情報なし');
-            Cache::put('chk', 0, 300);
+            Cache::put('chk', 0, CommonConst::CACHE_TIME);
             return view('login.login');
         }
         
         // 存在しているなら設定 ※おいおいはハッシュ化
         $uid = Str::uuid();
-        Cache::put('loginInfo', $uid, 300);
+        Cache::put('loginInfo', $uid, CommonConst::CACHE_TIME);
 
         return view('top.index',['id'=>hash('sha256',$uid)]);
     }
@@ -48,7 +48,7 @@ class LoginController extends Controller
         // キャッシュ削除
         Cache::flush();
         // フラグ設定
-        Cache::put('chk','1', 300);
+        Cache::put('chk','1', CommonConst::CACHE_TIME);
         
         return view('login.login');
     }

@@ -1,14 +1,21 @@
-@extends('layouts.temp')
+@extends('layouts.bs_temp')
 
 @section('title', 'プロフィール')
 
 @section('content')
-    <div id="mainPic">
+    <!--<div id="mainPic">-->
         
-    </div>
-    <div id="gear">
-        <img src="{{ secure_asset('./img/gear.png') }}" alt="gear">
-    </div>
+    <!--</div>-->
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
 @endsection
 
 @section('footer')

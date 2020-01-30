@@ -1,14 +1,22 @@
-@extends('layouts.temp')
+@extends('layouts.bs_temp')
 
 @section('title', 'トップ')
 
 @section('content')
     <div id="mainPic">
-        <a href="/logout">ログアウト</a>
+        <div class="mainBg"></div> 
     </div>
-    <div id="gear">
-        <img src="{{ secure_asset('./img/gear.png') }}" alt="gear">
-    </div>
+    
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
 @endsection
 
 @section('footer')
