@@ -8,26 +8,26 @@
         <title>@yield('title')</title>
     </head>
     <body>
-        <header class="boxA">
+        <div class="boxA">
             <div class="boxA-inner">
                 <div class="box1">
                     <div class="site">
-                        <h1 class="header-logo-design"><a href="{{ action('TopController@index') }}">Technical Diary</a></h1>
+                        <h1 class="header-logo-design"><a href="top">Travel Diary</a></h1>
                     </div>
                 </div>
                 <div class="box2">
                     <nav class="menu" id="menu">
                         <ul>
-                            <li><a href="#mainContents">TOP</a></li>
-                            <li><a href="#mainPf">PROFILE</a></li>
-                            <li><a href="#mainWk">WORKS</a></li>
-                            <li><a href="#mainMl">CONTACT US</a></li>
+                            <li><a href="{{ action('TopController@index') }}">TOP</a></li>
+                            <li><a href="{{ action('Profile\ProfileController@index') }}">PROFILE</a></li>
+                            <li><a href="{{ action('Works\WorksController@index') }}">WORKS</a></li>
+                            <li><a href="{{ action('Mail\MailController@index') }}">MAIL</a></li>
                             <li><a href="{{ action('Login\LoginController@logout') }}">LOGOUT</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
-        </header>
+        </div>
         <div class="contents">
             <div id="mainContents">
                 @yield('content')

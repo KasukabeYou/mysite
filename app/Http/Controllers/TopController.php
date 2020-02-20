@@ -18,9 +18,11 @@ class TopController extends Controller
         //     Log::info('abc111');
         //     Log::info(Session::get('key'));
         //     Log::info('abc222');
-        //     Session::put('key','111');
+        Log::info("表示テスト");
+        Session::put('key','111');
         //     return redirect('/top');
         // }
+        
         return view('top.index');
     }
 }

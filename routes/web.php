@@ -16,7 +16,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('top', 'TopController@index');
+
 Route::get('mail', 'Mail\MailController@index');
+Route::post('/mail/confirm', 'Mail\MailController@confirm')->name('mail.confirm');
+Route::post('/mail/thanks', 'Mail\MailController@send')->name('mail.send');
+
 Route::get('profile', 'Profile\ProfileController@index');
 Route::get('works', 'Works\WorksController@index');
 
