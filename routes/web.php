@@ -13,7 +13,7 @@
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top/index');
 });
 Route::get('top', 'TopController@index');
 
@@ -22,7 +22,9 @@ Route::post('/mail/confirm', 'Mail\MailController@confirm')->name('mail.confirm'
 Route::post('/mail/thanks', 'Mail\MailController@send')->name('mail.send');
 
 Route::get('profile', 'Profile\ProfileController@index');
-Route::get('works', 'Works\WorksController@index');
+
+// ログインを設定
+Route::get('works', 'Works\WorksController@index')->name('works.index');
 
 Route::get('member', 'Member\MemberController@show');
 Route::get('member/{id}/detail', 'Member\MemberController@detail')->name('member.detail')->where('id', '(.*)');
@@ -46,3 +48,21 @@ Route::group(['namespace' => 'Api'], function() {
     // LineからのWebhookを受信
     Route::post('/line/webhook', 'LineWebhookController@webhook')->name('line.webhook');
 });
+
+// ログイン
+Route::get('login/sisu',      'Login\LoginController@getSiSu');
+Route::get('login/pfed',        'Login\LoginController@getPfEd');
+Route::get('login/pwrs',        'Login\LoginController@getPwRs');
+Route::get('login/azure/redirect', 'Login\LoginController@getAzureRedirect');
+Route::post('/login/azure/callback', 'Login\LoginController@getAzureCallback');
+
+// Codeよりトークンを取得
+Route::match(['get', 'post'], '/login/token/sisu', 'Login\LoginController@getTokenSiSu');
+Route::match(['get', 'post'], '/login/token/pfed', 'Login\LoginController@getTokenPfEd');
+Route::match(['get', 'post'], '/login/token/pwrs', 'Login\LoginController@getTokenPwRs');
+Route::get('login/logout', 'Auth\LoginController@logout')->name('logout');
+
+// Codeよりトークンを取得
+// Route::get('auth/login', 'Login\LoginController@viewLogin');
+Route::get('/login/facebook', 'Login\LoginController@redirectToFacebookProvider');
+Route::get('/login/facebook/callback', 'Login\LoginController@handleFacebookProviderCallback');
