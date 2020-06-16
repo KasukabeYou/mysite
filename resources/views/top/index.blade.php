@@ -50,7 +50,7 @@
                     <td>勉強や実験も兼ねて色々とアウトプットしようと思い、作成したシステムを載せています。</td>
                 </tr>
                 <tr colspan="2">
-                    <td><a id="contact_us" href="{{ action('Login\LoginController@getSiSu') }}">機能一覧はこちら</a></td>
+                    <td><a id="contact_us" href="{{ action('Works\WorksController@index') }}">機能一覧はこちら</a></td>
                 </tr>
             </table>
         </div>

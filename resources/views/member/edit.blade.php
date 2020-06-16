@@ -5,7 +5,7 @@
 @section('content')
     <div id="mainPic">
         <div class="t_info">
-            @if(isset($member))
+            @if(isset($member) && !empty($member))
                 ※パスワードは未登録なら更新しない。
                 <table>
                 <form action="/member/edit" method="post">

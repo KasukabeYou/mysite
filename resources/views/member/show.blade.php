@@ -5,7 +5,7 @@
 @section('content')
     <div id="mainPic">
         <div class="t_info">
-            @if(isset($members))
+            @if(isset($members) && !empty($members))
                 <table>
                     <tr>
                         <td>surname</td>

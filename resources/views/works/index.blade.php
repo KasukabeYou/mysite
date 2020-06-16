@@ -1,4 +1,4 @@
-@extends('layouts.temp')
+@extends('layouts.work_temp')
 
 @section('title', '作品')
 
@@ -29,9 +29,11 @@
             </table>
         </div>
     </div>
+    <!--
     <div id="gear">
         <img src="{{ secure_asset('./img/gear.png') }}" alt="gear">
     </div>
+    -->
 @endsection
 
 @section('footer')
