@@ -19,7 +19,7 @@ class CreateMembersTable extends Migration
             $table->string('givenname');
             $table->string('dispname');
             $table->string('mail');
-            $table->string('del_flg');
+            $table->integer('del_flg')->default(0);
             $table->timestamps();
         });
     }
