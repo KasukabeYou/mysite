@@ -66,3 +66,7 @@ Route::get('login/logout', 'Auth\LoginController@logout')->name('logout');
 // Route::get('auth/login', 'Login\LoginController@viewLogin');
 Route::get('/login/facebook', 'Login\LoginController@redirectToFacebookProvider');
 Route::get('/login/facebook/callback', 'Login\LoginController@handleFacebookProviderCallback');
+
+if (env('APP_ENV') === 'production') {
+    URL::forceScheme('https');
+}
