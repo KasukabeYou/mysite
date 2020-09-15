@@ -37,7 +37,7 @@
                   <a class="nav-link" href="#contactUsSt">CONTACT US</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ action('Login\LoginController@logout') }}">LOGOUT</a>
+                  <!-- ログイン・ログアウト実装予定 -->
                 </li>
                 <!-- ドロップダウン -->
                 <!--<li class="nav-item dropdown">-->
@@ -60,6 +60,15 @@
         </nav>
         <div class="contents">
             <div id="mainContents">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    </div>
+                @endif
                 @yield('content')
             </div>
         </div>

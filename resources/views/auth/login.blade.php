@@ -1,8 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.common')
+
+@section('title', 'Login')
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center p-5">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -70,4 +72,26 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+    <!-- ナビゲーション -->
+    <ul class="nav justify-content-center mb-3">
+      <li class="nav-item">
+        <a class="nav-link" href="#topSt">Top</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#profileSt">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#worksSt">Works</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contactUsSt">Contact Us</a>
+      </li>
+    </ul>
+    <!-- ナビゲーション -->
+    <p>
+      <small>Copyright &copy;2020 Technical Diary.</small>
+    </p>
 @endsection

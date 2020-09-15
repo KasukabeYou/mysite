@@ -14,7 +14,7 @@
                 <li><a href="{{ action('Profile\ProfileController@index') }}">PROFILE</a>
                 <li><a href="{{ action('Works\WorksController@index') }}">WORKS</a></li>
                 <li><a href="{{ action('Mail\MailController@index') }}">MAIL</a></li>
-                <li><a href="{{ action('Login\LoginController@logout') }}">LOGOUT</a></li>
+                <!--<li><a href="{{ action('Login\LoginController@logout') }}">LOGOUT</a></li>-->
             </ul>
         </div>
         <div class="contents">

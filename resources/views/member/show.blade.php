@@ -1,4 +1,4 @@
-@extends('layouts.temp')
+@extends('layouts.common')
 
 @section('title', 'トップ')
 
@@ -8,17 +8,13 @@
             @if(isset($members) && !empty($members))
                 <table>
                     <tr>
-                        <td>surname</td>
-                        <td>givenname</td>
-                        <td>dispname</td>
-                        <td>mail</td>
+                        <th>name</th>
+                        <th>email</th>
                     </tr>
                 @foreach ($members as $member)
                     <tr>
-                        <td>{{$member->surname}}</td>
-                        <td>{{$member->givenname}}</td>
-                        <td>{{$member->dispname}}</td>
-                        <td>{{$member->mail}}</td>
+                        <td>{{$member->name}}</td>
+                        <td>{{$member->email}}</td>
                         <td><a href="{{ route('member.detail', $member->id) }}">詳細</a></td>
                         <td><a href="{{ route('member.edit', $member->id) }}">編集</a></td>
                         <td><a href="{{ route('member.del', $member->id) }}">削除</a></td>
@@ -28,9 +24,7 @@
             @endif
         </div>
     </div>
-    <div id="gear">
-        <img src="{{ secure_asset('./img/gear.png') }}" alt="gear">
-    </div>
+    <a href="{{ route('works.index') }}">機能一覧へ戻る</a>
 @endsection
 
 @section('footer')

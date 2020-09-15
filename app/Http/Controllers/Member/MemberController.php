@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
-use App\Member;
+use App\User;
 use App\Http\Controllers\Controller;
 use Session;
+use App\Http\Requests\MemberRequest;
+use Illuminate\Support\Facades\Hash;
+use Log;
 
 class MemberController extends Controller
 {
@@ -52,38 +55,40 @@ class MemberController extends Controller
 	/**
 	 * 登録処理.
 	 */
-	public function create(Request $request)
+	public function create(MemberRequest $request)
 	{
+		Log::info("登録処理実行 -start");
 		// 二重送信対策
         $request->session()->regenerateToken();
+        
+        // エラーチェック
 
-		$mem = new Member;
-		$mem->surname = $request->surname;
-		$mem->givenname = $request->givenname;
-		$mem->dispname = $request->dispname;
-		$mem->mail = $request->mail;
+		// 登録内容設定
+		$mem = new User;
+		$mem->name = $request->name;
+		$mem->email = $request->email;
+		$mem->password = Hash::make($request->password);
+		$mem->del_flg = "0";
 		$mem->save();
-// 		$mem->fill($request->all())->save();
-
+		
+		Log::info("登録処理実行 -end");
+		
         return $this->selMems();
-		//DB::insert('insert into people (name, mail, age) values (:name, :mail, :age)', $param);
-// 		return redirect('top');
 	}
 
 	/**
 	 * 更新処理.
 	 */
-	public function update(Request $request)
+	public function update(MemberRequest $request)
 	{
 		// 二重送信対策
         $request->session()->regenerateToken();
 
-		$same_values  = [ 'surname' => $request->surname, 'givenname' => $request->givenname, 'dispname' => $request->dispname, 'mail' => $request->mail];
-		// パスワードが設定されている場合
-		if (isset($request->password) && !empty($request->password)) {
-			$same_values['password'] = $request->password;
-		}
-        Member::where('id', $request->id)->update($same_values);
+		$same_values  = [ 'name' => $request->name, 'email' => $request->email, 'password' => Hash::make($request->password)];
+
+		// 更新
+        User::where('id', $request->id)->update($same_values);
+        
 		return $this->selMems();
 	}
 
@@ -95,8 +100,10 @@ class MemberController extends Controller
 		// 二重送信対策
         $request->session()->regenerateToken();
         
+        // 削除設定
 		$same_values  = [ 'del_flg' => 1];
-        Member::where('id', $request->id)->update($same_values);
+        User::where('id', $request->id)->update($same_values);
+        
 		return $this->selMems();
 	}
 
@@ -104,8 +111,8 @@ class MemberController extends Controller
 	 * 会員情報取得.
 	 */
 	private function selMems() {
-        // $member = new Member;
-        $members = Member::where('del_flg', 0)->get();
+		
+        $members = User::where('del_flg', 0)->get();
 
         return view('member.show',['members' => $members]);
 	}
@@ -114,7 +121,7 @@ class MemberController extends Controller
 	 * 対象の会員情報取得.
 	 */
 	private function selMem($id, $pass) {
-        $mem = Member::find($id);
+        $mem = User::find($id);
 		return view($pass,['member' => $mem]);
 	}
 }

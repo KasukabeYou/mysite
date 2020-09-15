@@ -14,21 +14,25 @@
           <table class="table table-striped text-left">
             <tbody>
                 <tr>
-                    <td>機能名</td>
-                    <td>リンク</td>
+                    <th>機能名</th>
+                    <th>リンク</th>
                 </tr>            
                 <tr>
                     <td>メンバー管理処理</td>
-                    <td><a href="{{ action('Member\MemberController@signup') }}">登録</a> <a href="{{ action('Member\MemberController@show') }}">参照</a></td>
+                    <td><a href="{{ route('member.signup') }}">登録</a>　<a href="{{ route('member.show') }}">一覧参照</a></td>
+                </tr>
+                <tr>
+                    <td>ログイン処理</td>
+                    <td><a href="{{ route('login') }}">ログイン</a></td>
                 </tr>
                 <tr>
                     <td>LineMessageApi</td>
                     <td><a href="{{ action('TopController@index') }}">作成中</a></td>
                 </tr>
-                <tr>
-                    <td>ログイン（AZURE AD使用）</td>
-                    <td><a href="{{ action('TopController@index') }}">作成中</a></td>
-                </tr>
+                <!--<tr>-->
+                <!--    <td>ログイン（AZURE AD使用）</td>-->
+                <!--    <td><a href="{{ action('TopController@index') }}">作成中</a></td>-->
+                <!--</tr>-->
                 <tr>
                     <td>XXXXX</td>
                     <td><a href="{{ action('TopController@index') }}">作成中</a></td>
