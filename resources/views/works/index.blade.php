@@ -9,7 +9,7 @@
   <div class="py-5 bg-light profileSt">
     <section id="profile">
       <div class="container">
-        <h3 class="text-center mb-3">Profile</h3>
+        <h3 class="text-center mb-3">機能一覧</h3>
         <div class="card text-center text-dark w-75 mx-auto">
           <table class="table table-striped text-left">
             <tbody>
@@ -23,15 +23,15 @@
                 </tr>
                 <tr>
                     <td>LineMessageApi</td>
-                    <td><a href="{{ action('TopController@index') }}">TOP</a></td>
+                    <td><a href="{{ action('TopController@index') }}">作成中</a></td>
                 </tr>
                 <tr>
                     <td>ログイン（AZURE AD使用）</td>
-                    <td><a href="{{ action('TopController@index') }}">TOP</a></td>
+                    <td><a href="{{ action('TopController@index') }}">作成中</a></td>
                 </tr>
                 <tr>
                     <td>XXXXX</td>
-                    <td><a href="{{ action('TopController@index') }}">TOP</a></td>
+                    <td><a href="{{ action('TopController@index') }}">作成中</a></td>
                 </tr>
             </tbody>
           </table>
