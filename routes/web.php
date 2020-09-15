@@ -70,3 +70,7 @@ Route::get('/login/facebook/callback', 'Login\LoginController@handleFacebookProv
 if (env('APP_ENV') === 'production') {
     URL::forceScheme('https');
 }
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
