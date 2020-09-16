@@ -1,4 +1,4 @@
-@extends('layouts.bs_temp')
+@extends('layouts.common')
 
 @section('title', 'メール送信確認')
 
