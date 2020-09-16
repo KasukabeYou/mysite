@@ -1,6 +1,6 @@
-@extends('layouts.temp')
+@extends('layouts.common')
 
-@section('title', '会員詳細')
+@section('title', '会員退会')
 
 @section('content')
     <div id="mainPic">
@@ -26,5 +26,7 @@
 @endsection
 
 @section('footer')
-    <p>Copyright © Travel Diary</p>
+    <p>
+      <small>Copyright &copy;2020 Technical Diary.</small>
+    </p>
 @endsection

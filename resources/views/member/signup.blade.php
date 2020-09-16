@@ -8,22 +8,22 @@
 @endsection
 
 @section('content')
-    <div id="mainPic">
-        <div class="t_info">
-            <table>
-                <form action="/member/add" method="post">
-                   @csrf
-                   <tr><th>name: </th><td><input type="text" name="name"></td></tr>
-                   <tr><th>email: </th><td><input type="text" name="email"></td></tr>
-                   <tr><th>password: </th><td><input type="password" name="password"></td></tr>
-                   <tr><th>confirme: </th><td><input type="password" name="password_confirmation"></td></tr>
-                   <tr><th></th><td><input type="submit" value="create"></td></tr>
-                </form>
-            </table>
-        </div>
-    </div>
+<div class="container">
+    <form action="/member/add" method="post">
+    @csrf
+        <table class="table-sm m-4">
+            <tr><th class="col-xs-2 p-2">name: </th><td class="col-xs-2 p-2"><input type="text" name="name"></td></tr>
+            <tr><th class="col-xs-2 p-2">email: </th><td class="col-xs-2 p-2"><input type="text" name="email"></td></tr>
+            <tr><th class="col-xs-2 p-2">password: </th><td class="col-xs-2 p-2"><input type="password" name="password"></td></tr>
+            <tr><th class="col-xs-2 p-2">confirme: </th><td class="col-xs-2 p-2"><input type="password" name="password_confirmation"></td></tr>
+            <tr><td class="col-xs-2 p-2 text-center" colspan="2"><input type="submit" value="create"></td></tr>
+        </table>
+    </form>
+</div>
 @endsection
 
 @section('footer')
-copyright 2019 kou.
+    <p>
+      <small>Copyright &copy;2020 Technical Diary.</small>
+    </p>
 @endsection

@@ -47,21 +47,6 @@
 
 @section('footer')
     <!-- ナビゲーション -->
-    <ul class="nav justify-content-center mb-3">
-      <li class="nav-item">
-        <a class="nav-link" href="#topSt">Top</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#profileSt">Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#worksSt">Works</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#contactUsSt">Contact Us</a>
-      </li>
-    </ul>
-    <!-- ナビゲーション -->
     <p>
       <small>Copyright &copy;2020 Technical Diary.</small>
     </p>

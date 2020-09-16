@@ -84,7 +84,7 @@ class MemberController extends Controller
 		// 二重送信対策
         $request->session()->regenerateToken();
 
-		$same_values  = [ 'name' => $request->name, 'email' => $request->email, 'password' => Hash::make($request->password)];
+		$same_values  = [ 'name' => $request->name, 'email' => $request->email];
 
 		// 更新
         User::where('id', $request->id)->update($same_values);
@@ -113,7 +113,7 @@ class MemberController extends Controller
 	private function selMems() {
 		
         $members = User::where('del_flg', 0)->get();
-
+	
         return view('member.show',['members' => $members]);
 	}
 
