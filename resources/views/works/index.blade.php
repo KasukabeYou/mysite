@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layouts.common_work')
 
 @section('title', 'Technical Diary -Works-')
 
@@ -22,8 +22,23 @@
                     <td><a href="{{ route('member.signup') }}">登録</a>　<a href="{{ route('member.show') }}">一覧参照</a></td>
                 </tr>
                 <tr>
-                    <td>ログイン処理</td>
-                    <td><a href="{{ route('login') }}">ログイン</a></td>
+                    <td>ログイン/ログアウト処理</td>
+                    @guest
+                      <td><a href="{{ route('login') }}">ログイン</a></td>
+                    @else
+                      <td>
+                        ユーザー名：{{ Auth::user()->name }}
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                      </td>
+                    @endguest
                 </tr>
                 <tr>
                     <td>LineMessageApi</td>

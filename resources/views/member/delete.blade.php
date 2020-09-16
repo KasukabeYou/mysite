@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layouts.common_work')
 
 @section('title', '会員退会')
 

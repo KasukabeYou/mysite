@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layouts.common_work')
 
 @section('title', 'メール送信確認')
 

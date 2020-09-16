@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.common_work')
 
 @section('content')
 <div class="container">
@@ -25,4 +25,11 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+    <!-- ナビゲーション -->
+    <p>
+      <small>Copyright &copy;2020 Technical Diary.</small>
+    </p>
 @endsection

@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.common_work')
 
 @section('content')
-<div class="container">
+<div class="container p-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -70,4 +70,11 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+    <!-- ナビゲーション -->
+    <p>
+      <small>Copyright &copy;2020 Technical Diary.</small>
+    </p>
 @endsection
