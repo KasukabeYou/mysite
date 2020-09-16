@@ -3,26 +3,19 @@
 @section('title', '会員退会')
 
 @section('content')
-    <div id="mainPic">
-        <div class="t_info">
-            @if(isset($member))
-                <table>
-                   <tr><th>surname: </th><td>{{$member->surname}}</td></tr>
-                   <tr><th>givenname: </th><td>{{$member->givenname}}</td></tr>
-                   <tr><th>dispname: </th><td>{{$member->dispname}}</td></tr>
-                   <tr><th>mail: </th><td>{{$member->mail}}</td></tr>
-                </table>
-                <form action="/member/del" method="post">
-                   {{ csrf_field() }}
-                   <input type="hidden" name="id" value="{{$member->id}}">
-                   <tr><th></th><td><input type="submit" value="delete"></td></tr>
-                </form>
-            @endif
-        </div>
-    </div>
-    <div id="gear">
-        <img src="{{ secure_asset('./img/gear.png') }}" alt="gear">
-    </div>
+<div class="container">
+    @if(isset($member))
+    <form action="/member/del" method="post">
+       @csrf
+        <input type="hidden" name="id" value="{{$member->id}}">
+        <table class="table-sm m-4">
+           <tr><th class="col-xs-2 p-2">name: </th><td class="col-xs-2 p-2">{{$member->name}}</td></tr>
+           <tr><th class="col-xs-2 p-2">email: </th><td class="col-xs-2 p-2">{{$member->email}}</td></tr>
+            <tr><td class="col-xs-2 p-2 text-center" colspan="2"><input type="submit" value="delete"></td></tr>
+        </table>
+    </form>
+    @endif
+</div>
 @endsection
 
 @section('footer')

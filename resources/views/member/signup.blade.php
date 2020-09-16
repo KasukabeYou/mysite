@@ -16,7 +16,7 @@
             <tr><th class="col-xs-2 p-2">email: </th><td class="col-xs-2 p-2"><input type="text" name="email"></td></tr>
             <tr><th class="col-xs-2 p-2">password: </th><td class="col-xs-2 p-2"><input type="password" name="password"></td></tr>
             <tr><th class="col-xs-2 p-2">confirme: </th><td class="col-xs-2 p-2"><input type="password" name="password_confirmation"></td></tr>
-            <tr><td class="col-xs-2 p-2 text-center" colspan="2"><input type="submit" value="create"></td></tr>
+            <tr><td class="col-xs-2 p-2 text-center" colspan="2"><input type="submit" value="regist"></td></tr>
         </table>
     </form>
 </div>
