@@ -3,7 +3,14 @@
 @section('title', 'メール送信完了')
 
 @section('content')
-<h1>{{ __('送信完了') }}</h1>
+<div class="container">
+    <div class="pt-2 pl-4">
+        <h3>送信完了しました。</h3>
+    </div>
+    <div class="pl-2 m-4">
+        <a href="{{ route('works.index') }}">機能一覧へ戻る</a>
+    </div>
+</div>
 @endsection
 
 @section('footer')
