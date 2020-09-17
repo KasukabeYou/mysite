@@ -19,7 +19,13 @@
                 </tr>            
                 <tr>
                     <td>メンバー管理処理</td>
-                    <td><a href="{{ route('member.signup') }}">登録</a>　<a href="{{ route('member.show') }}">一覧参照</a></td>
+                    <td>
+                    @guest
+                      <a href="{{ route('member.signup') }}">登録</a>
+                    @else
+                      <a href="{{ route('member.show') }}">一覧参照</a>
+                    @endguest
+                    </td>
                 </tr>
                 <tr>
                     <td>ログイン/ログアウト処理</td>
