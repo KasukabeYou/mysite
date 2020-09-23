@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use Log;
+use App;
 
 class TopController extends Controller
 {
@@ -14,15 +15,9 @@ class TopController extends Controller
     
     //
     public function index() {
-        // if (trim(Session::get('key')) == '') {
-        //     Log::info('abc111');
-        //     Log::info(Session::get('key'));
-        //     Log::info('abc222');
-        Log::info("表示テスト");
-        Session::put('key','111');
-        //     return redirect('/top');
-        // }
-        
+        App::setLocale('ja');
+        Session::put('locale','ja');
+
         return view('top.index');
     }
 }

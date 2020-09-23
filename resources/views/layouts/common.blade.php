@@ -13,8 +13,8 @@
           <div class="container">
             <!-- サブコンポーネント -->
             <!-- ブランド -->
-            <!--<h1 class="header-logo-design"><a href="{{ action('TopController@index') }}">Technical Diary</a></h1>-->-->
-            <a class="navbar-brand" href="{{ action('TopController@index') }}">Technical Diary</a>
+            <!--<h1 class="header-logo-design"><a href="{{ route('top') }}">Technical Diary</a></h1>-->-->
+            <a class="navbar-brand" href="{{ route('top') }}">Technical Diary</a>
             <!-- 切替ボタン 画面サイズが小さくなった場合-->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"> 
                 <span class="navbar-toggler-icon"></span>

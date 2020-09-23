@@ -38,8 +38,10 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guestex')->except('logout');
+        
+        $this->middleware('set.locale');
     }
-    
+
     /**
      * Log the user out of the application.
      *
@@ -60,6 +62,6 @@ class LoginController extends Controller
 
         return $request->wantsJson()
             ? new JsonResponse([], 204)
-            : redirect('/works');
+            : redirect('/');
     }
 }

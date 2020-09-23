@@ -9,8 +9,8 @@
         
         <div class="boxA">
             <ul>
-                <li><h1 class="header-logo-design"><a href="{{ action('TopController@index') }}">Travel Diary</a></h1></li>
-                <li><a href="{{ action('TopController@index') }}">TOP</a></li>
+                <li><h1 class="header-logo-design"><a href="{{ route('top') }}">Travel Diary</a></h1></li>
+                <li><a href="{{ route('top') }}">TOP</a></li>
                 <li><a href="{{ action('Profile\ProfileController@index') }}">PROFILE</a>
                 <li><a href="{{ action('Works\WorksController@index') }}">WORKS</a></li>
                 <li><a href="{{ action('Mail\MailController@index') }}">MAIL</a></li>

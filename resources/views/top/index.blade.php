@@ -8,7 +8,7 @@
   <div class="flex card bg-dark text-white">
     <img class="card-img top-img" src="../img/top_b.jpg" alt="トップ画像">
     <div class="d-flex align-items-center  justify-content-center card-img-overlay">
-      <h1>Let's Walk In Front</h1>
+      <h1>@lang('messages.welcome')</h1>
     </div>
   </div>
   <!--</div>-->
@@ -17,7 +17,7 @@
   <div class="py-5 bg-light profileSt">
     <section id="profile">
       <div class="container">
-        <h3 class="text-center mb-3">Profile</h3>
+        <h3 class="text-center mb-3">@lang('messages.profile')</h3>
         <div class="card text-center text-dark w-75 mx-auto">
           <table class="table table-striped text-left">
             <tbody>
@@ -48,7 +48,7 @@
   <div class="py-5 bgSkySet worksSt">
     <section id="works">
       <div class="container">
-        <h3 class="text-center mb-3">Works</h3>
+        <h3 class="text-center mb-3">@lang('messages.work.work')</h3>
         <div class="card text-left text-dark w-75 mx-auto">
           <div class="pl-2 pt-2 ">
             <h5><strong>作成機能一覧</strong></h5>
@@ -66,10 +66,9 @@
   <div class="py-5 bg-light">
     <section id="contactUs">
       <div class="container">
-        <h3 class="text-center mb-3">Contact Us</h3>
+        <h3 class="text-center mb-3">@lang('messages.contact')</h3>
         <div class="card text-left text-dark w-75 mx-auto">
           <div class="pl-2 pt-2 ">
-            <h5><strong>お問い合わせ</strong></h5>
             <div>何か御用のある方は下のボタンより、問い合わせ画面にて連絡してください。</div>
             <div class="p-3 text-center">
               <a id="contact_us" href="{{ action('Mail\MailController@index') }}">お問い合わせはこちら</a>
@@ -88,13 +87,13 @@
         <a class="nav-link" href="#topSt">Top</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#profileSt">Profile</a>
+        <a class="nav-link" href="#profileSt">@lang('messages.profile')</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#worksSt">Works</a>
+        <a class="nav-link" href="#worksSt">@lang('messages.work.work')</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#contactUsSt">Contact Us</a>
+        <a class="nav-link" href="#contactUsSt">@lang('messages.contact')</a>
       </li>
     </ul>
     <!-- ナビゲーション -->
