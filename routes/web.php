@@ -21,7 +21,7 @@ Route::group(['middleware'=>'set.locale'], function () {
     })->name('top');
 
     // メール処理
-    Route::get('mail', 'Mail\MailController@index');
+    Route::get('mail', 'Mail\MailController@index')->name('mail.index');
     Route::post('/mail/confirm', 'Mail\MailController@confirm')->name('mail.confirm');
     Route::post('/mail/thanks', 'Mail\MailController@send')->name('mail.send');
     

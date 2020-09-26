@@ -1,14 +1,15 @@
 @extends('layouts.common_work')
 
-@section('title', 'メール送信完了')
+@section('title', 'お問い合わせ内容送信完了')
 
 @section('content')
-<div class="container">
+<div style="min-height:600px;" class="container p-4">
     <div class="pt-2 pl-4">
-        <h3>送信完了しました。</h3>
+        <h3>お問い合わせ内容を送信いたしました。</h3>
+        <h3>内容を確認次第に、担当者からご連絡いたしますので少々お待ちください。</h3>
     </div>
     <div class="pl-2 m-4">
-        <a href="{{ route('works.index') }}">機能一覧へ戻る</a>
+        <a href="{{ route('top') }}">トップへ戻る</a>
     </div>
 </div>
 @endsection
