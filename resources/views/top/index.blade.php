@@ -45,15 +45,15 @@
               </tr>
               <tr>
                   <td>PHP</td>
-                  <td>1年～3年</td>
+                  <td>3年以上</td>
               </tr>
               <tr>
                   <td>Ruby</td>
-                  <td>1年～3年</td>
+                  <td>1年～3年未満</td>
               </tr>
               <tr>
                   <td>Python</td>
-                  <td>1年～3年</td>
+                  <td>1年～3年未満</td>
               </tr>
               <tr>
                   <th>URL</th>
