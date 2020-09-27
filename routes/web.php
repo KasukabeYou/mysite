@@ -42,8 +42,12 @@ Route::group(['middleware'=>'set.locale'], function () {
     // 削除
     Route::get('member/{id}/del', 'Member\MemberController@delete')->name('member.del')->where('id', '(.*)')->middleware('authc');
     Route::post('member/del', 'Member\MemberController@delUpdate')->middleware('authc');
-});
+    
 
+});
+// Googleアカウントログイン
+Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
 
 Route::group(['namespace' => 'Api'], function() {
     // LineからのWebhookを受信
