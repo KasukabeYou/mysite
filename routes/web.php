@@ -46,8 +46,11 @@ Route::group(['middleware'=>'set.locale'], function () {
 
 });
 // Googleアカウントログイン
-Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
-Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
+// Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
+// Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
+
+Route::get('/login/{social}', 'Auth\LoginController@socialLogin')->where('social', 'google|facebook|twitter');
+Route::get('/login/{social}/callback', 'Auth\LoginController@handleProviderCallback')->where('social', 'google|facebook|twitter');
 
 Route::group(['namespace' => 'Api'], function() {
     // LineからのWebhookを受信

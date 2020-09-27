@@ -89,7 +89,7 @@
               </tr>
               <tr>
                   <td style="width:40%">SNSログイン処理（Google）</td>
-                  <td style="width:40%">実装予定</td>
+                  <td style="width:40%">実装済み</td>
               </tr>
               <tr>
                   <td style="width:40%">SNSログイン処理（Google以外）</td>

@@ -46,32 +46,31 @@ class LoginController extends Controller
     }
     
     /**
-     * Googleアカウントへログイン.
+     * SNSログイン処理.
      */
-    public function redirectToGoogle()
+    public function socialLogin($social)
     {
-        // Google へのリダイレクト
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver($social)->redirect();
     }
     
     /**
-     * Google 認証後の処理.
+     * SNS認証後の処理.
      */
-    public function handleGoogleCallback()
+    public function handleProviderCallback($social)
     {
-        $gUser = Socialite::driver('google')->stateless()->user();
+        $gUser = Socialite::driver($social)->stateless()->user();
         // email が合致するユーザーを取得
         $user = User::where('email', $gUser->email)->first();
         // 見つからなければ新しくユーザーを作成
         if ($user == null) {
-            $user = $this->createUserByGoogle($gUser);
+            $user = $this->createUser($gUser);
         }
         // ログイン処理
         \Auth::login($user, true);
         return redirect('/works');
     }
     
-    public function createUserByGoogle($gUser)
+    public function createUser($gUser)
     {
         $user = User::create([
             'name'     => $gUser->name,
