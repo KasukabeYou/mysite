@@ -7,12 +7,15 @@
 ### Laravel
 ・多言語対応（英語対応）　→済み<br/>
 ・Googleアカウントログイン　→済み<br/>
-　⇒Facebook、Twitterと順次反映予定。　9/26までに対応予定<br/>
-　⇒Lineは別途実装予定。　9/29に対応予定<br/>
-・カート機能　9/30までに対応予定<br/>
+　→Facebookはコロナの影響により個別での検証が不可のためSNSログインを保留としてます。
+　　FBからのブログ内容：https://developers.facebook.com/blog/post/2020/03/24/pausing-individual-verification/
+　→Twitterは仕様が変わったため調査中。
+　→LineはTwitter対応後に反映<br/>
+・カート機能　順次対応予定<br/>
 ・天気情報表示　外部API使用予定<br/>
 ・ログイン中の制御<br/>
-　⇒ソースの整理が必要　9/18時点
+　→ソースの整理が必要
+・JSやPHPなどの問題集サイトの構築
 ・全体の動作確認<br/>
 
 ### Python
@@ -21,3 +24,4 @@
 ・SNS簡易機能（済み）<br/>
 　→いいね、既読機能<br/>
 ・スクレイピング（Laravelのアカウント処理対応後）
+・AI関連の機能実装予定（Tensowflowの動画学習後）

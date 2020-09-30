@@ -71,6 +71,11 @@
                                 Google Login
                             </a>
                         </div>
+                        <div class="col-md-8 offset-md-4">
+                            <a href="/login/twitter" class="btn btn-secondary" role="button">
+                                Twitter Login
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
