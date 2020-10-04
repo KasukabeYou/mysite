@@ -28,11 +28,11 @@ class WeatherController extends Controller
      * 天気の情報を取得.
      */
     private function getWeather($area_id){
-    	$api_base = env('OPENWEATHER_ENDPOINT');
-    	$api_type = env('OPENWEATHER_API_TYPE');
-    	$api_parm = '?id='.$area_id.'&units=metric&appid='.env('OPENWEATHER_API_KEY');
+    	$api_base = config('my-app.ow-ep');
+    	$api_type = config('my-app.ow-at');
+    	$api_parm = '?id='.$area_id.'&units=metric&appid='.config('my-app.ow-ky');
     	$api_url = $api_base.$api_type.$api_parm;
-
+        \Log::info('api : ' . $api_url);
     	return json_decode(file_get_contents($api_url), true);
     }
 }

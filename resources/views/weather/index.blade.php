@@ -18,7 +18,8 @@
     <input type="submit" value="検索">
     </form>
     @if(isset($weather))
-        {{$weather}}
+        <p>ダンプの結果</p>
+        {{var_dump($weather)}}
     @endif
 </div>
 @endsection
