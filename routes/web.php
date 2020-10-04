@@ -42,9 +42,12 @@ Route::group(['middleware'=>'set.locale'], function () {
     // 削除
     Route::get('member/{id}/del', 'Member\MemberController@delete')->name('member.del')->where('id', '(.*)')->middleware('authc');
     Route::post('member/del', 'Member\MemberController@delUpdate')->middleware('authc');
-    
-
 });
+
+// 天気
+Route::get('/weather/index', 'WeatherController@index')->name('weather.index');
+Route::post('/weather/output', 'WeatherController@output')->name('weather.output');
+
 // Googleアカウントログイン
 // Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
 // Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');

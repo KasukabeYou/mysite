@@ -46,8 +46,8 @@
                     @endguest
                 </tr>
                 <tr>
-                    <td>LineMessageApi</td>
-                    <td><a href="{{ route('top') }}">作成中</a></td>
+                    <td>OpenWeather</td>
+                    <td><a href="{{ route('weather.index') }}">天気の情報を表示</a></td>
                 </tr>
                 <!--<tr>-->
                 <!--    <td>ログイン（AZURE AD使用）</td>-->
