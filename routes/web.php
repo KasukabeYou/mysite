@@ -45,8 +45,8 @@ Route::group(['middleware'=>'set.locale'], function () {
 });
 
 // 天気
-Route::get('/weather/index', 'WeatherController@index')->name('weather.index');
-Route::post('/weather/output', 'WeatherController@output')->name('weather.output');
+Route::get('/weather/index', 'Weather\WeatherController@index')->name('weather.index');
+Route::post('/weather/output', 'Weather\WeatherController@output')->name('weather.output');
 
 // Googleアカウントログイン
 // Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
