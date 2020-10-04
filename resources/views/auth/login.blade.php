@@ -76,6 +76,11 @@
                                 Twitter Login
                             </a>
                         </div>
+                        <div class="col-md-8 offset-md-4">
+                            <a href="/login/line" class="btn btn-secondary" role="button">
+                                Line Login
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

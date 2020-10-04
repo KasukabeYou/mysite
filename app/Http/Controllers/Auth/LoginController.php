@@ -50,6 +50,7 @@ class LoginController extends Controller
      */
     public function socialLogin($social)
     {
+        \Log::info('Socialチェック：'.$social);
         return Socialite::driver($social)->redirect();
     }
     
