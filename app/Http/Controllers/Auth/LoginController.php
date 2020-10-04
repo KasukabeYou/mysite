@@ -58,7 +58,13 @@ class LoginController extends Controller
      */
     public function handleProviderCallback($social)
     {
-        $gUser = Socialite::driver($social)->stateless()->user();
+        if ($social == 'twitter') {
+            $gUser = Socialite::driver($social)->user();
+        } else {
+            $gUser = Socialite::driver($social)->stateless()->user();
+        }
+        
+        
         // email が合致するユーザーを取得
         $user = User::where('email', $gUser->email)->first();
         // 見つからなければ新しくユーザーを作成
@@ -66,7 +72,7 @@ class LoginController extends Controller
             $user = $this->createUser($gUser);
         }
         // ログイン処理
-        \Auth::login($user, true);
+        \Auth::login($user, true);  
         return redirect('/works');
     }
     

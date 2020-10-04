@@ -1,6 +1,6 @@
 @extends('layouts.common_work')
 
-@section('title', 'トップ')
+@section('title', '天気情報')
 
 @section('content')
 <div style="min-height:600px;" class="container p-4">
