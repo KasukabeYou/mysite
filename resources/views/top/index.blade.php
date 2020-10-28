@@ -79,7 +79,7 @@
                   <td colspan="2">現在勉強中のLaravel・Djangoのうち、Laravelを使った機能を随時更新していきます。</td>
               </tr>
               <tr>
-                  <td style="width:20%" rowspan="6">機能一覧・実装予定表</td>
+                  <td style="width:20%" rowspan="8">機能一覧・実装予定表</td>
                   <td style="width:40%">会員処理（登録・変更・退会・詳細・一覧）</td>
                   <td style="width:40%">実装済み</td>
               </tr>
@@ -93,7 +93,11 @@
               </tr>
               <tr>
                   <td style="width:40%">SNSログイン処理（Google以外）</td>
-                  <td style="width:40%">実装予定</td>
+                  <td style="width:40%">実装済み</td>
+              </tr>
+              <tr>
+                  <td style="width:40%">天気情報</td>
+                  <td style="width:40%">実装中</td>
               </tr>
               <tr>
                   <td style="width:40%">カート機能</td>
