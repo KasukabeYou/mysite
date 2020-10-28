@@ -22,7 +22,10 @@ class WeatherController extends Controller
     public function output(Request $req) {
         // city idを取得
         //var_dump( getWeather(1859171) );
-        return view('weather.index' ,['weather' => $this->getWeather($req->weather_select)]);
+        $weather = $this->getWeather($req->weather_select);
+        \Log::info($weather['city']);
+        \Log::info('緯度：'.$weather['city']['coord']['lat'].' 経度：'.$weather['city']['coord']['lon']);
+        return view('weather.index' ,['lat' => $weather['city']['coord']['lat'], 'lon' => $weather['city']['coord']['lon'],  'apikey' => config('my-app.gmap.api_key')]);
     }
     
     /**

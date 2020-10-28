@@ -17,9 +17,22 @@
     </select>
     <input type="submit" value="検索">
     </form>
-    @if(isset($weather))
-        <p>ダンプの結果</p>
-        {{var_dump($weather)}}
+    @if(isset($apikey))
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key={{$apikey}}&callback=initMap">
+        </script>
+        <div id="map" style="width:620px; height:400px"></div>
+        @if(!empty($lat))
+        <script>        
+            function initMap() {
+                var opts = {
+                    zoom: 15,
+                    center: new google.maps.LatLng('{{$lat}}', '{{$lon}}')
+                };
+                var map = new google.maps.Map(document.getElementById("map"), opts);
+            }
+        </script>
+        @endif
     @endif
 </div>
 @endsection

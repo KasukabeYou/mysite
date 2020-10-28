@@ -65,7 +65,6 @@ class LoginController extends Controller
             $gUser = Socialite::driver($social)->stateless()->user();
         }
         
-        
         // email が合致するユーザーを取得
         $user = User::where('email', $gUser->email)->first();
         // 見つからなければ新しくユーザーを作成

@@ -47,3 +47,13 @@ _window.trigger('scroll');
 //     return false;
 //   });
 // });
+
+
+// function initMap(lat, lon) {
+//     console.log("緯度"+lat);
+//   var opts = {
+//     zoom: 15,
+//     center: new google.maps.LatLng(lat, lon)
+//   };
+//   var map = new google.maps.Map(document.getElementById("map"), opts);
+// }
