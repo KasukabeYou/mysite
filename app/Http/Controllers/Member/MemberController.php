@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\Controller;
 use Session;
-use App\Http\Requests\MemberRequest;
 use Illuminate\Support\Facades\Hash;
 use Log;
 
@@ -55,13 +54,22 @@ class MemberController extends Controller
 	/**
 	 * 登録処理.
 	 */
-	public function create(MemberRequest $request)
+	public function create(Request $request)
 	{
 		Log::info("登録処理実行 -start");
 		// 二重送信対策
-        $request->session()->regenerateToken();
+        //$request->session()->regenerateToken();
         
         // エラーチェック
+        $rules = ['name' => ['required', 'string', 'max:255'],
+	              'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+	              'password' => ['required', 'string', 'min:8', 'confirmed'],
+            	];
+        $validate = \Validator::make($request->all(), $rules);
+
+		if ($validate->fails()) {
+			return redirect()->back()->withErrors($validation->errors())->withInput();
+		}
 
 		// 登録内容設定
 		$mem = new User;
@@ -79,10 +87,21 @@ class MemberController extends Controller
 	/**
 	 * 更新処理.
 	 */
-	public function update(MemberRequest $request)
+	public function update(Request $request)
 	{
 		// 二重送信対策
-        $request->session()->regenerateToken();
+        // $request->session()->regenerateToken();
+
+        // エラーチェック
+        $rules = ['name' => ['required', 'string', 'max:255'],
+	              //'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+	              'password' => ['required', 'string', 'min:8', 'confirmed'],
+            	];
+        $validate = \Validator::make($request->all(), $rules);
+
+		if ($validate->fails()) {
+			return redirect()->back()->withErrors($validation->errors())->withInput();
+		}
 
 		$same_values  = [ 'name' => $request->name, 'email' => $request->email];
 
@@ -98,7 +117,7 @@ class MemberController extends Controller
 	public function delUpdate(Request $request)
 	{
 		// 二重送信対策
-        $request->session()->regenerateToken();
+        //$request->session()->regenerateToken();
         
         // 削除設定
 		$same_values  = [ 'del_flg' => 1];

@@ -25,12 +25,15 @@ class MemberRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Array $arg = null)
     {
-        return [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ];
+        if ($arg == null || count($arg) == 0) {
+            return [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+            ];
+        }
+        return $arg;
     }
 }
